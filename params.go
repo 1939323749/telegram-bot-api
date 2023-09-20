@@ -102,17 +102,3 @@ func (p *Params) Merge(p1 Params) {
 		(*p)[k] = v
 	}
 }
-
-// Merge merges two sets of parameters. Overwrites old fields if present
-func (p *Params) Merge(p1 Params) {
-	for k, v := range p1 {
-		(*p)[k] = v
-	}
-}
-
-// Merge merges two sets of parameters. Overwrites old fields if present
-func (p *Params) Merge(p1 Params) {
-	for k, v := range p1 {
-		(*p)[k] = v
-	}
-}
