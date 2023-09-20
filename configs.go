@@ -116,7 +116,8 @@ type RequestFile struct {
 	// The file field name.
 	Name string
 	// The file data to include.
-	Data RequestFileData
+	Data    RequestFileData
+	Sticker RequestFileData
 }
 
 // RequestFileData represents the data to be used for a file.
@@ -562,7 +563,8 @@ func (config DocumentConfig) files() []RequestFile {
 // StickerConfig contains information about a SendSticker request.
 type StickerConfig struct {
 	//Emoji associated with the sticker; only for just uploaded stickers
-	Emoji string
+	Emoji   string
+	Sticker Sticker
 	BaseFile
 }
 
@@ -2167,14 +2169,17 @@ func (config UploadStickerConfig) files() []RequestFile {
 
 // NewStickerSetConfig allows creating a new sticker set.
 type NewStickerSetConfig struct {
-	UserID        int64
-	Name          string
-	Title         string
-	PNGSticker    RequestFileData
-	TGSSticker    RequestFileData
-	Emojis        string
-	ContainsMasks bool
-	MaskPosition  *MaskPosition
+	UserID          int64
+	Name            string
+	Title           string
+	PNGSticker      RequestFileData
+	TGSSticker      RequestFileData
+	Emojis          string
+	ContainsMasks   bool
+	MaskPosition    *MaskPosition
+	StickerFormat   string
+	NeedsRepainting bool
+	Stickers        []StickerConfig
 }
 
 func (config NewStickerSetConfig) method() string {
@@ -2197,8 +2202,8 @@ func (config NewStickerSetConfig) params() (Params, error) {
 	return params, err
 }
 
-func (config NewStickerSetConfig) files() []RequestFile {
-	requestFiles := []RequestFile{}
+func (config NewStickerSetConfig) files() []Sticker {
+	var requestFiles []Sticker
 	for _, v := range config.Stickers {
 		requestFiles = append(requestFiles, v.Sticker)
 	}
@@ -2682,7 +2687,8 @@ func (config UnhideGeneralForumTopicConfig) method() string {
 // Media consist of InputMedia items (InputMediaPhoto, InputMediaVideo).
 type MediaGroupConfig struct {
 	BaseChat
-	Media []interface{}
+	Media  []interface{}
+	ChatID int64
 }
 
 func (config MediaGroupConfig) method() string {

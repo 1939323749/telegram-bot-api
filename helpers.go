@@ -730,24 +730,6 @@ func NewInlineKeyboardButtonSwitchInlineQueryChoosenChat(text string, switchInli
 	}
 }
 
-// NewInlineKeyboardButtonSwitchInlineQueryChoosenChat creates an inline keyboard button with text
-// which goes to a SwitchInlineQueryChosenChat.
-func NewInlineKeyboardButtonSwitchInlineQueryChoosenChat(text string, switchInlineQueryChosenChat SwitchInlineQueryChosenChat) InlineKeyboardButton {
-	return InlineKeyboardButton{
-		Text:                        text,
-		SwitchInlineQueryChosenChat: &switchInlineQueryChosenChat,
-	}
-}
-
-// NewInlineKeyboardButtonSwitchInlineQueryChoosenChat creates an inline keyboard button with text
-// which goes to a SwitchInlineQueryChosenChat.
-func NewInlineKeyboardButtonSwitchInlineQueryChoosenChat(text string, switchInlineQueryChosenChat SwitchInlineQueryChosenChat) InlineKeyboardButton {
-	return InlineKeyboardButton{
-		Text:                        text,
-		SwitchInlineQueryChosenChat: &switchInlineQueryChosenChat,
-	}
-}
-
 // NewInlineKeyboardButtonLoginURL creates an inline keyboard button with text
 // which goes to a LoginURL.
 func NewInlineKeyboardButtonLoginURL(text string, loginURL LoginURL) InlineKeyboardButton {
@@ -953,96 +935,6 @@ func NewBotCommandScopeChatMember(chatID, userID int64) BotCommandScope {
 		Type:   "chat_member",
 		ChatID: chatID,
 		UserID: userID,
-	}
-}
-
-// NewSetMyDescription allows you to change the bot's description, which is shown in the chat with the bot if the chat is empty.
-func NewSetMyDescription(description, languageCode string) SetMyDescriptionConfig {
-	return SetMyDescriptionConfig{
-		Description:  description,
-		LanguageCode: languageCode,
-	}
-}
-
-// NewGetMyDescription returns the current bot description for the given user language
-func NewGetMyDescription(languageCode string) GetMyDescriptionConfig {
-	return GetMyDescriptionConfig{
-		LanguageCode: languageCode,
-	}
-}
-
-// NewSetMyShortDescription allows you change the bot's short description, which is shown on the bot's profile page and is sent together with the link when users share the bot.
-func NewSetMyShortDescription(shortDescription, languageCode string) SetMyShortDescriptionConfig {
-	return SetMyShortDescriptionConfig{
-		ShortDescription: shortDescription,
-		LanguageCode:     languageCode,
-	}
-}
-
-// NewGetMyShortDescription returns the current bot short description for the given user language.
-func NewGetMyShortDescription(languageCode string) GetMyShortDescriptionConfig {
-	return GetMyShortDescriptionConfig{
-		LanguageCode: languageCode,
-	}
-}
-
-// NewGetMyName get the current bot name for the given user language
-func NewGetMyName(languageCode string) GetMyNameConfig {
-	return GetMyNameConfig{
-		LanguageCode: languageCode,
-	}
-}
-
-// NewSetMyName change the bot's name
-func NewSetMyName(languageCode, name string) SetMyNameConfig {
-	return SetMyNameConfig{
-		Name:         name,
-		LanguageCode: languageCode,
-	}
-}
-
-// NewSetMyDescription allows you to change the bot's description, which is shown in the chat with the bot if the chat is empty.
-func NewSetMyDescription(description, languageCode string) SetMyDescriptionConfig {
-	return SetMyDescriptionConfig{
-		Description:  description,
-		LanguageCode: languageCode,
-	}
-}
-
-// NewGetMyDescription returns the current bot description for the given user language
-func NewGetMyDescription(languageCode string) GetMyDescriptionConfig {
-	return GetMyDescriptionConfig{
-		LanguageCode: languageCode,
-	}
-}
-
-// NewSetMyShortDescription allows you change the bot's short description, which is shown on the bot's profile page and is sent together with the link when users share the bot.
-func NewSetMyShortDescription(shortDescription, languageCode string) SetMyShortDescriptionConfig {
-	return SetMyShortDescriptionConfig{
-		ShortDescription: shortDescription,
-		LanguageCode:     languageCode,
-	}
-}
-
-// NewGetMyShortDescription returns the current bot short description for the given user language.
-func NewGetMyShortDescription(languageCode string) GetMyShortDescriptionConfig {
-	return GetMyShortDescriptionConfig{
-		LanguageCode: languageCode,
-	}
-}
-
-// NewGetMyName get the current bot name for the given user language
-func NewGetMyName(languageCode string) GetMyNameConfig {
-	return GetMyNameConfig{
-		LanguageCode: languageCode,
-	}
-}
-
-// NewSetMyName change the bot's name
-func NewSetMyName(languageCode, name string) SetMyNameConfig {
-	return SetMyNameConfig{
-		Name:         name,
-		LanguageCode: languageCode,
 	}
 }
 
