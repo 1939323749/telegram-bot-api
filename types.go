@@ -206,6 +206,10 @@ type User struct {
 	//
 	// optional
 	LanguageCode string `json:"language_code,omitempty"`
+	// True, if this user added the bot to the attachment menu
+	//
+	//	optional
+	AddedToAttachmentMenu bool
 	// CanJoinGroups is true, if the bot can be invited to groups.
 	// Returned only in getMe.
 	//
